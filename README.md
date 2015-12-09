@@ -10,12 +10,15 @@ To run the test server you need the sinatra and json gems installed.  Then run:
 ```
 ruby server.rb
 ```
+The server has a 2 second sleep in there to show some network traffic.
+
 
 ## Changes since the meetup:
 - Added more than one question quiz!
 - Quiz "grading"
 - Broke out the model object, and JSON handling into a separate file 
 - Dependency inject the singleton Network service into our view controller
+- Slightly more attractive buttons (including a start button)
 
 My plan is to cover these changes at the next meetup and any additional feedback that I get.
 
