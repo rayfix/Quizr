@@ -1,0 +1,398 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5D4527DB1C168827008AB200 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4527DA1C168827008AB200 /* Quiz.swift */; };
+		5D4527DD1C168ACB008AB200 /* ChoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4527DC1C168ACB008AB200 /* ChoiceTableViewCell.swift */; };
+		5D5F3C571C13685200F91778 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5F3C561C13685200F91778 /* AppDelegate.swift */; };
+		5D5F3C591C13685200F91778 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5F3C581C13685200F91778 /* QuizViewController.swift */; };
+		5D5F3C5C1C13685200F91778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D5F3C5A1C13685200F91778 /* Main.storyboard */; };
+		5D5F3C5E1C13685200F91778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D5F3C5D1C13685200F91778 /* Assets.xcassets */; };
+		5D5F3C611C13685200F91778 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D5F3C5F1C13685200F91778 /* LaunchScreen.storyboard */; };
+		5D7D15381C17A0C700B41CA6 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7D15371C17A0C700B41CA6 /* StartViewController.swift */; };
+		5D7D153A1C17A3FC00B41CA6 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7D15391C17A3FC00B41CA6 /* CustomButton.swift */; };
+		5DDA41941C18B9480054724D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDA41931C18B9480054724D /* Network.swift */; };
+		F68D2944258B111055D726FB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548BCB6A1C07986ECAFCFACA /* Pods.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		05D56C25A338CB663E54E83A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		5006B5C6D99326BD5E9F72BC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		548BCB6A1C07986ECAFCFACA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D4527DA1C168827008AB200 /* Quiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		5D4527DC1C168ACB008AB200 /* ChoiceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceTableViewCell.swift; sourceTree = "<group>"; };
+		5D5F3C531C13685200F91778 /* Quizr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quizr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D5F3C561C13685200F91778 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5D5F3C581C13685200F91778 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		5D5F3C5B1C13685200F91778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5D5F3C5D1C13685200F91778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5D5F3C601C13685200F91778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5D5F3C621C13685200F91778 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D5F3C681C13754F00F91778 /* Quizr-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Quizr-Bridging-Header.h"; sourceTree = "<group>"; };
+		5D7D15371C17A0C700B41CA6 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		5D7D15391C17A3FC00B41CA6 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		5DDA41931C18B9480054724D /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5D5F3C501C13685200F91778 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F68D2944258B111055D726FB /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2093F8645D6EE9E729E70B62 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05D56C25A338CB663E54E83A /* Pods.debug.xcconfig */,
+				5006B5C6D99326BD5E9F72BC /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5D5F3C4A1C13685200F91778 = {
+			isa = PBXGroup;
+			children = (
+				5D5F3C551C13685200F91778 /* Quizr */,
+				5D5F3C541C13685200F91778 /* Products */,
+				2093F8645D6EE9E729E70B62 /* Pods */,
+				F3223EB36F04BFE32716E439 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5D5F3C541C13685200F91778 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D5F3C531C13685200F91778 /* Quizr.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5D5F3C551C13685200F91778 /* Quizr */ = {
+			isa = PBXGroup;
+			children = (
+				5D5F3C561C13685200F91778 /* AppDelegate.swift */,
+				5D5F3C581C13685200F91778 /* QuizViewController.swift */,
+				5D4527DC1C168ACB008AB200 /* ChoiceTableViewCell.swift */,
+				5D7D15391C17A3FC00B41CA6 /* CustomButton.swift */,
+				5D4527DA1C168827008AB200 /* Quiz.swift */,
+				5DDA41931C18B9480054724D /* Network.swift */,
+				5D5F3C5A1C13685200F91778 /* Main.storyboard */,
+				5D7D15371C17A0C700B41CA6 /* StartViewController.swift */,
+				5D5F3C5D1C13685200F91778 /* Assets.xcassets */,
+				5D5F3C5F1C13685200F91778 /* LaunchScreen.storyboard */,
+				5D5F3C621C13685200F91778 /* Info.plist */,
+				5D5F3C681C13754F00F91778 /* Quizr-Bridging-Header.h */,
+			);
+			path = Quizr;
+			sourceTree = "<group>";
+		};
+		F3223EB36F04BFE32716E439 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				548BCB6A1C07986ECAFCFACA /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5D5F3C521C13685200F91778 /* Quizr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D5F3C651C13685200F91778 /* Build configuration list for PBXNativeTarget "Quizr" */;
+			buildPhases = (
+				7004C297B7809601E581BFDF /* Check Pods Manifest.lock */,
+				5D5F3C4F1C13685200F91778 /* Sources */,
+				5D5F3C501C13685200F91778 /* Frameworks */,
+				5D5F3C511C13685200F91778 /* Resources */,
+				91D563AC6C6292189D7160B6 /* Embed Pods Frameworks */,
+				022FF3F2E1BDC1105CB6A1C7 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Quizr;
+			productName = Quizr;
+			productReference = 5D5F3C531C13685200F91778 /* Quizr.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5D5F3C4B1C13685200F91778 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Pelfunc, Inc";
+				TargetAttributes = {
+					5D5F3C521C13685200F91778 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 5D5F3C4E1C13685200F91778 /* Build configuration list for PBXProject "Quizr" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5D5F3C4A1C13685200F91778;
+			productRefGroup = 5D5F3C541C13685200F91778 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5D5F3C521C13685200F91778 /* Quizr */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5D5F3C511C13685200F91778 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D5F3C611C13685200F91778 /* LaunchScreen.storyboard in Resources */,
+				5D5F3C5E1C13685200F91778 /* Assets.xcassets in Resources */,
+				5D5F3C5C1C13685200F91778 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		022FF3F2E1BDC1105CB6A1C7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7004C297B7809601E581BFDF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		91D563AC6C6292189D7160B6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5D5F3C4F1C13685200F91778 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D7D15381C17A0C700B41CA6 /* StartViewController.swift in Sources */,
+				5D4527DB1C168827008AB200 /* Quiz.swift in Sources */,
+				5D7D153A1C17A3FC00B41CA6 /* CustomButton.swift in Sources */,
+				5D5F3C591C13685200F91778 /* QuizViewController.swift in Sources */,
+				5D4527DD1C168ACB008AB200 /* ChoiceTableViewCell.swift in Sources */,
+				5DDA41941C18B9480054724D /* Network.swift in Sources */,
+				5D5F3C571C13685200F91778 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5D5F3C5A1C13685200F91778 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D5F3C5B1C13685200F91778 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5D5F3C5F1C13685200F91778 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D5F3C601C13685200F91778 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5D5F3C631C13685200F91778 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5D5F3C641C13685200F91778 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5D5F3C661C13685200F91778 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05D56C25A338CB663E54E83A /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = Quizr/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pelfunc.Quizr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Quizr/Quizr-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5D5F3C671C13685200F91778 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5006B5C6D99326BD5E9F72BC /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = Quizr/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pelfunc.Quizr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Quizr/Quizr-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5D5F3C4E1C13685200F91778 /* Build configuration list for PBXProject "Quizr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D5F3C631C13685200F91778 /* Debug */,
+				5D5F3C641C13685200F91778 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D5F3C651C13685200F91778 /* Build configuration list for PBXNativeTarget "Quizr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D5F3C661C13685200F91778 /* Debug */,
+				5D5F3C671C13685200F91778 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5D5F3C4B1C13685200F91778 /* Project object */;
+}
