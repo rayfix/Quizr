@@ -26,6 +26,43 @@ struct Quiz {
   let questions: [Question]
 }
 
+struct QuizRun {
+  let quiz: Quiz
+  private(set) var wrongAnswers = 0
+  private(set) var index = 0
+  
+  init(quiz: Quiz) {
+    self.quiz = quiz
+  }
+  
+  var current: Question? {
+    guard !isDone else { return nil }
+    return quiz.questions[index]
+  }
+  
+  var isDone: Bool { return index >= quiz.questions.count }
+  
+  mutating func next() {
+    index += 1
+  }
+  
+  mutating func restart() {
+    index = 0
+    wrongAnswers = 0
+  }
+  
+  mutating func advance(answer: String) -> Bool {
+    if answer == current!.answer {
+      next()
+      return true
+    }
+    else {
+      wrongAnswers += 1
+      return false
+    }
+  }
+}
+
 
 import SwiftyJSON
 

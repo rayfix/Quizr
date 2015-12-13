@@ -12,20 +12,24 @@ import SwiftyJSON
 
 class QuizViewController: UIViewController, UITableViewDataSource {
 
-  @IBOutlet weak var feedbackLabel: UILabel!
   @IBOutlet weak var tableView: UITableView!
-  @IBOutlet weak var questionLabel: UILabel!
   var statusOverlay: ResourceStatusOverlay!
   
   var network =  quizNetwork // ready for dependency injection
   
-  var questionIndex = 0 {
+  var quizRun: QuizRun? {
     didSet {
       updateViews()
     }
   }
+  
   var currentQuestion: Question? {
-    return quiz?.questions[questionIndex]
+    return quizRun?.current
+  }
+  
+  var progressString: String {
+    guard let quizRun = quizRun else { return "" }
+    return "\(quizRun.index+1) / \(quizRun.quiz.questions.count)"
   }
   
   override func viewDidLayoutSubviews() {
@@ -33,40 +37,27 @@ class QuizViewController: UIViewController, UITableViewDataSource {
     statusOverlay.positionToCover(view)
   }
   
-  var quiz: Quiz? {
-    didSet {
-      updateViews()
-    }
-  }
-  
+  var feedback: String = " "
+
   func updateViews() {
-    title = quiz?.title ?? "Quizr"
-    questionLabel.text = currentQuestion?.question
+    title = quizRun?.quiz.title ?? "Quizr"
     tableView.reloadData()
   }
   
   @IBAction func answer(sender: UIButton) {
-    if let attempt = sender.titleLabel?.text,
-           answer =  currentQuestion?.answer
+
+    if let response = sender.titleLabel?.text
     {
-      if  attempt == answer {
-        feedbackLabel.text = ""
-        nextQuestion()
+      if quizRun!.advance(response) {
+        feedback = progressString
       }
       else {
-        feedbackLabel.text = "Sorry"
+        feedback = "Sorry"
       }
-    }
-  }
-  
-  func nextQuestion() {
-    guard let quiz = quiz else { return }
-    
-    if questionIndex < quiz.questions.count-1 {
-      questionIndex += 1
-    }
-    else {
-      navigationController?.popToRootViewControllerAnimated(true)
+      updateViews()
+      if quizRun!.isDone {
+        navigationController?.popToRootViewControllerAnimated(true)
+      }
     }
   }
   
@@ -75,6 +66,8 @@ class QuizViewController: UIViewController, UITableViewDataSource {
     
     tableView?.separatorColor = .clearColor()
     tableView?.dataSource = self
+    tableView.estimatedRowHeight = 44
+    tableView.rowHeight = UITableViewAutomaticDimension
     
     statusOverlay = ResourceStatusOverlay()
     statusOverlay.embedIn(self)
@@ -89,7 +82,10 @@ class QuizViewController: UIViewController, UITableViewDataSource {
 
       guard let strongSelf = self else { return }
       let json = JSON(resource.jsonDict)
-      strongSelf.quiz = try? Quiz(json: json)
+      if let quiz = try? Quiz(json: json) {
+        strongSelf.quizRun = QuizRun(quiz: quiz)
+        strongSelf.feedback = strongSelf.progressString
+      }
     }
   }
   
@@ -98,18 +94,47 @@ class QuizViewController: UIViewController, UITableViewDataSource {
     network.questions.loadIfNeeded()
   }
 
+  enum TableSections : Int {
+    case Question, Feedback, Choices, Size
+  }
+  
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! ChoiceTableViewCell
     
-    if let button = cell.choiceButton {
-      button.setTitle(currentQuestion?.choices[indexPath.row], forState: .Normal)
+    switch indexPath.section {
+      case TableSections.Question.rawValue:
+        let cell = tableView.dequeueReusableCellWithIdentifier("QuestionCell", forIndexPath: indexPath) as! QuestionTableViewCell
+        cell.questionLabel.text = currentQuestion?.question
+        return cell
+      case TableSections.Feedback.rawValue:
+        let cell = tableView.dequeueReusableCellWithIdentifier("FeedbackCell", forIndexPath: indexPath) as! FeedbackTableViewCell
+        cell.feedbackLabel.text = feedback
+        return cell
+      case TableSections.Choices.rawValue:
+        let cell = tableView.dequeueReusableCellWithIdentifier("ChoiceCell", forIndexPath: indexPath) as! ChoiceTableViewCell
+          if let button = cell.choiceButton {
+            button.setTitle(currentQuestion?.choices[indexPath.row], forState: .Normal)
+          }
+        return cell
+      default:
+        fatalError("invalid section")
     }
-    
-    return cell
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return currentQuestion?.choices.count ?? 0
+    switch section {
+      case TableSections.Question.rawValue:
+        return 1
+      case TableSections.Feedback.rawValue:
+        return 1
+      case TableSections.Choices.rawValue:
+        return currentQuestion?.choices.count ?? 0
+      default:
+        fatalError("invalid section")
+    }
+  }
+  
+  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    return quizRun != nil ? TableSections.Size.rawValue : 0
   }
 }
 

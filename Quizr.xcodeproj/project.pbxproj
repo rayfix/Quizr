@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D4527DB1C168827008AB200 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4527DA1C168827008AB200 /* Quiz.swift */; };
-		5D4527DD1C168ACB008AB200 /* ChoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4527DC1C168ACB008AB200 /* ChoiceTableViewCell.swift */; };
+		5D4527DD1C168ACB008AB200 /* CustomTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4527DC1C168ACB008AB200 /* CustomTableViewCells.swift */; };
 		5D5F3C571C13685200F91778 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5F3C561C13685200F91778 /* AppDelegate.swift */; };
 		5D5F3C591C13685200F91778 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5F3C581C13685200F91778 /* QuizViewController.swift */; };
 		5D5F3C5C1C13685200F91778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D5F3C5A1C13685200F91778 /* Main.storyboard */; };
@@ -25,7 +25,7 @@
 		5006B5C6D99326BD5E9F72BC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		548BCB6A1C07986ECAFCFACA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D4527DA1C168827008AB200 /* Quiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
-		5D4527DC1C168ACB008AB200 /* ChoiceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceTableViewCell.swift; sourceTree = "<group>"; };
+		5D4527DC1C168ACB008AB200 /* CustomTableViewCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCells.swift; sourceTree = "<group>"; };
 		5D5F3C531C13685200F91778 /* Quizr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quizr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5F3C561C13685200F91778 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D5F3C581C13685200F91778 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 			children = (
 				5D5F3C561C13685200F91778 /* AppDelegate.swift */,
 				5D5F3C581C13685200F91778 /* QuizViewController.swift */,
-				5D4527DC1C168ACB008AB200 /* ChoiceTableViewCell.swift */,
+				5D4527DC1C168ACB008AB200 /* CustomTableViewCells.swift */,
 				5D7D15391C17A3FC00B41CA6 /* CustomButton.swift */,
 				5D4527DA1C168827008AB200 /* Quiz.swift */,
 				5DDA41931C18B9480054724D /* Network.swift */,
@@ -231,7 +231,7 @@
 				5D4527DB1C168827008AB200 /* Quiz.swift in Sources */,
 				5D7D153A1C17A3FC00B41CA6 /* CustomButton.swift in Sources */,
 				5D5F3C591C13685200F91778 /* QuizViewController.swift in Sources */,
-				5D4527DD1C168ACB008AB200 /* ChoiceTableViewCell.swift in Sources */,
+				5D4527DD1C168ACB008AB200 /* CustomTableViewCells.swift in Sources */,
 				5DDA41941C18B9480054724D /* Network.swift in Sources */,
 				5D5F3C571C13685200F91778 /* AppDelegate.swift in Sources */,
 			);
