@@ -15,7 +15,7 @@ class QuizViewController: UIViewController, UITableViewDataSource {
   @IBOutlet weak var feedbackLabel: UILabel!
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var questionLabel: UILabel!
-  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+  var statusOverlay: ResourceStatusOverlay!
   
   var network =  quizNetwork // ready for dependency injection
   
@@ -26,6 +26,11 @@ class QuizViewController: UIViewController, UITableViewDataSource {
   }
   var currentQuestion: Question? {
     return quiz?.questions[questionIndex]
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    statusOverlay.positionToCover(view)
   }
   
   var quiz: Quiz? {
@@ -70,17 +75,26 @@ class QuizViewController: UIViewController, UITableViewDataSource {
     
     tableView?.separatorColor = .clearColor()
     tableView?.dataSource = self
+    
+    statusOverlay = ResourceStatusOverlay()
+    statusOverlay.embedIn(self)
+    statusOverlay.loadingIndicator?.color = FlatRed()
+    let retryButtonAppearance = UIButton.appearanceWhenContainedInInstancesOfClasses([ResourceStatusOverlay.self])
+    retryButtonAppearance.backgroundColor = .whiteColor()
+    retryButtonAppearance.setTitleColor(FlatBlue(), forState: .Normal)
+    
+    network.questions.addObserver(statusOverlay)
+    
     network.questions.addObserver(owner: self) { [weak self] resource, event in
+
       guard let strongSelf = self else { return }
-      strongSelf.activityIndicator.hidden = !resource.loading
-      if case .NewData = event {
-        let json = JSON(resource.jsonDict)
-        strongSelf.quiz = Quiz(json: json)
-      }
+      let json = JSON(resource.jsonDict)
+      strongSelf.quiz = try? Quiz(json: json)
     }
   }
   
-  override func viewDidAppear(animated: Bool) {
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
     network.questions.loadIfNeeded()
   }
 

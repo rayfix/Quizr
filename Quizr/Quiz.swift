@@ -32,11 +32,11 @@ import SwiftyJSON
 typealias JSONDictionary = [String: AnyObject]
 
 protocol JSONConvertible {
-  init?(json: JSON)
+  init(json: JSON) throws
 }
 
 extension Question : JSONConvertible {
-  init?(json: JSON) {
+  init(json: JSON) throws {
     question = json["question"].stringValue
     answerIndex = json["answer"].intValue
     
@@ -49,14 +49,18 @@ extension Question : JSONConvertible {
 }
 
 extension Quiz : JSONConvertible {
-  init?(json: JSON) {
-    self.title = json["title"].stringValue
+  
+  enum Error : ErrorType {
+    case NoTitle
+  }
+  
+  init(json: JSON) throws {
+    guard let title = json["title"].string else { throw Error.NoTitle }
+    self.title = title
     self.author = json["author"].stringValue
     var questions: [Question] = []
     for question in json["questions"].arrayValue {
-      if let q = Question(json: question) {
-        questions.append(q)
-      }
+      questions.append(try Question(json: question))
     }
     self.questions = questions
   }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4ca-hb-tbC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4ca-hb-tbC">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -58,10 +58,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="XZk-V8-baZ">
-                                <rect key="frame" x="282" y="281" width="37" height="37"/>
-                                <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ts2-d2-uJ3">
                                 <rect key="frame" x="300" y="170" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
@@ -77,17 +73,14 @@
                             <constraint firstItem="tIO-zz-9gG" firstAttribute="centerX" secondItem="UQY-mL-O7x" secondAttribute="centerX" id="OrI-in-kpy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tIO-zz-9gG" secondAttribute="trailing" id="Pg5-Mx-Dhm"/>
                             <constraint firstItem="jG1-8B-e6m" firstAttribute="top" secondItem="tIO-zz-9gG" secondAttribute="bottom" constant="91.5" id="Rkf-jS-8fz"/>
-                            <constraint firstItem="XZk-V8-baZ" firstAttribute="centerX" secondItem="tIO-zz-9gG" secondAttribute="centerX" id="UMV-NP-mKV"/>
                             <constraint firstAttribute="leadingMargin" secondItem="tIO-zz-9gG" secondAttribute="leading" id="eIi-oK-F6c"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jG1-8B-e6m" secondAttribute="trailing" id="eLI-z4-whe"/>
-                            <constraint firstItem="XZk-V8-baZ" firstAttribute="centerY" secondItem="UQY-mL-O7x" secondAttribute="centerY" id="f2S-Fj-EMb"/>
                             <constraint firstItem="4JC-1H-gua" firstAttribute="top" secondItem="jG1-8B-e6m" secondAttribute="bottom" constant="20" id="hhO-kc-K4g"/>
                             <constraint firstItem="Ts2-d2-uJ3" firstAttribute="top" secondItem="tIO-zz-9gG" secondAttribute="bottom" constant="26" id="pCB-bY-WyB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Go!" id="uzM-br-y90"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="XZk-V8-baZ" id="hkH-2D-Nx6"/>
                         <outlet property="feedbackLabel" destination="Ts2-d2-uJ3" id="kSM-ST-YaO"/>
                         <outlet property="questionLabel" destination="tIO-zz-9gG" id="k1j-jo-9OQ"/>
                         <outlet property="tableView" destination="jG1-8B-e6m" id="M0C-b1-aVK"/>
