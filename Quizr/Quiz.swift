@@ -26,45 +26,38 @@ struct Quiz {
   let questions: [Question]
 }
 
-// JSON Handling: maybe we could swify json to help us out here
-//
-// FIXME: should use throwing inits handling to give richer failure
-// information.  Next version :)
+
+import SwiftyJSON
 
 typealias JSONDictionary = [String: AnyObject]
 
 protocol JSONConvertible {
-  init?(JSON: JSONDictionary)
+  init?(json: JSON)
 }
 
 extension Question : JSONConvertible {
-  init?(JSON: JSONDictionary) {
-    guard let question = JSON["question"] as? String else { return nil }
-    self.question = question
-    guard let answerIndex = JSON["answer"] as? Int else { return nil }
-    self.answerIndex = answerIndex
-    guard let choices = JSON["choices"] as? [String] else { return nil }
+  init?(json: JSON) {
+    question = json["question"].stringValue
+    answerIndex = json["answer"].intValue
+    
+    var choices: [String] = []
+    for choice in json["choices"].arrayValue {
+      choices.append(choice.stringValue)
+    }
     self.choices = choices
-    guard choices.indices.contains(answerIndex) else { return nil }
   }
 }
 
 extension Quiz : JSONConvertible {
-  init?(JSON: JSONDictionary) {
-    guard let title = JSON["title"] as? String else { return nil }
-    self.title = title
-    guard let author = JSON["author"] as? String else { return nil }
-    self.author = author
-    
+  init?(json: JSON) {
+    self.title = json["title"].stringValue
+    self.author = json["author"].stringValue
     var questions: [Question] = []
-    guard let JSONQuestions = JSON["questions"] as? [JSONDictionary] else { return nil }
-    for JSONQuestion in JSONQuestions {
-      if let q = Question(JSON: JSONQuestion) {
+    for question in json["questions"].arrayValue {
+      if let q = Question(json: question) {
         questions.append(q)
       }
     }
     self.questions = questions
   }
 }
-
-

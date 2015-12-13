@@ -5,13 +5,16 @@ PODS:
   - Siesta (1.0-beta.4):
     - Siesta/Core (= 1.0-beta.4)
   - Siesta/Core (1.0-beta.4)
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift
   - Siesta (>= 1.0-beta.4)
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   ChameleonFramework: a6b466873ff9a4ce3a5196c20bccf1a97ad9f446
   Siesta: 4bda1f6e7e0431b64bdfe9d3f902c34d90822c27
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
 COCOAPODS: 0.39.0

@@ -4,3 +4,4 @@ use_frameworks!
 
 pod 'Siesta', '>=1.0-beta.4'
 pod 'ChameleonFramework/Swift'
+pod 'SwiftyJSON'

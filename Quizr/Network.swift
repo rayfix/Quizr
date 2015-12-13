@@ -8,4 +8,16 @@
 
 import Siesta
 
-var Network = Service(base: "http://0.0.0.0:4567/")
+class QuizNetwork : Service {
+  
+  init() {
+    super.init(base: "http://0.0.0.0:4567/")
+  }
+  
+  var questions : Resource {
+    return resource("questions.json")
+  }
+  
+}
+
+let quizNetwork = QuizNetwork()

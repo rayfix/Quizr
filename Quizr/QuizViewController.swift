@@ -8,6 +8,7 @@
 
 import UIKit
 import Siesta
+import SwiftyJSON
 
 class QuizViewController: UIViewController, UITableViewDataSource {
 
@@ -16,13 +17,7 @@ class QuizViewController: UIViewController, UITableViewDataSource {
   @IBOutlet weak var questionLabel: UILabel!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
-  var network = Network  // ready for dependency injection
-  
-  var resourcePath: String { return "questions.json" }
-  
-  var resource: Resource {
-    return network.resource(resourcePath)
-  }
+  var network =  quizNetwork // ready for dependency injection
   
   var questionIndex = 0 {
     didSet {
@@ -75,18 +70,18 @@ class QuizViewController: UIViewController, UITableViewDataSource {
     
     tableView?.separatorColor = .clearColor()
     tableView?.dataSource = self
-    
-    resource.addObserver(owner: self) {
-      [weak self] resource, event in
+    network.questions.addObserver(owner: self) { [weak self] resource, event in
       guard let strongSelf = self else { return }
       strongSelf.activityIndicator.hidden = !resource.loading
-      guard !resource.loading else { return }
-      strongSelf.quiz = Quiz(JSON: resource.jsonDict)
+      if case .NewData = event {
+        let json = JSON(resource.jsonDict)
+        strongSelf.quiz = Quiz(json: json)
+      }
     }
   }
   
   override func viewDidAppear(animated: Bool) {
-    resource.loadIfNeeded()
+    network.questions.loadIfNeeded()
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
